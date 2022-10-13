@@ -116,7 +116,7 @@ class TeamListController extends Controller
         $section = [];
         //section取得
         foreach ($games as $game) {
-            $section[$game->game_date->format('Y-m-d-H:i')] = [
+            $section[$game->game_date->format('Y-m-d-H:i:s')] = [
                 'section' => $game->section,
             ];
         }
@@ -131,7 +131,7 @@ class TeamListController extends Controller
         $section2 = [];
         //section2取得
         foreach ($game_leagues as $game2) {
-            $section2[$game2->game_date->format('Y-m-d-H:i')] = [
+            $section2[$game2->game_date->format('Y-m-d-H:i:s')] = [
                 'section' => $game2->section,
             ];
         }

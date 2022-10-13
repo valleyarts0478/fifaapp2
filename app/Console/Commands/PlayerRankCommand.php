@@ -13,6 +13,7 @@ use App\Models\Goal_Assist;
 use App\Models\Convention;
 use App\Models\League;
 use App\Models\Team_owner;
+use App\Models\PlayerRankTotal;
 use Carbon\Carbon;
 
 class PlayerRankCommand extends Command
@@ -22,7 +23,7 @@ class PlayerRankCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'player_rank_total';
+    protected $signature = 'player_rank_total:test';
 
     /**
      * The console command description.
@@ -51,6 +52,11 @@ class PlayerRankCommand extends Command
         // $goal_assists = Goal_Assist::all();
         //降順の最初のレコードを取得
         $convention = Convention::orderBy('id', 'desc')->first();
+
+        //最初に関係するレコードを削除
+        $player_rank_totals = PlayerRankTotal::where('convention_id', $convention->id)
+            ->delete();
+// dd('okokok');
         //リレーション先のカラムを利用する場合の書き方
         //$conventionを外からつかうためuseで読み込む
         $goal_assists = Goal_Assist::wherehas('game_result', function ($query) use ($convention) {
@@ -87,7 +93,7 @@ class PlayerRankCommand extends Command
                 'assists' => $goal_assist->assists
             ];
         }
-
+        
         $goal_ranking = [];
         $assists_ranking = [];
         foreach ($player_rank as $key => $value) {
@@ -103,7 +109,7 @@ class PlayerRankCommand extends Command
                 'league_id' => $value2['league_id'],
                 'player_name' => $key,
                 'goals' => $goal_sum,
-                // 'assists' => $assist_sum,
+                'assists' => $assist_sum,
                 'team_name' => $value2['team_name'],
                 'team_abb' => $value2['team_abb'],
                 'team_logo_url' => $value2['team_logo_url']
@@ -119,7 +125,7 @@ class PlayerRankCommand extends Command
                 'team_logo_url' => $value2['team_logo_url']
             ];
         }
-
+        // dd($goal_ranking);
         //goalsの降順で並び替え
         array_multisort(array_column($goal_ranking, 'goals'), SORT_DESC, $goal_ranking);
         //assistsの降順で並び替え
@@ -132,16 +138,12 @@ class PlayerRankCommand extends Command
         // $flag = array_filter($goal_ranking, function ($goal_ranking) {
         //     return $goal_ranking['league_id'] == 2;
         // });
-
-        // dd($flag);
-        // dd($goal_ranking);
-        return view('user.player_rank', compact('goal_assists', 'p_names', 'goal_ranking', 'assists_ranking', 'goal_cnt', 'assists_cnt'));
-        // Goal_Assist::upsert(
-        //     $player_rank_total,
-        //     ['team_name'],
-        //     ['team_name', 'convention_id', 'league_id', 'game_point', 'game_count', 'win', 'lose', 'draw', 'gain', 'loss', 'numbers_diff']
-        // );
-
+        
+        PlayerRankTotal::upsert(
+            $goal_ranking,
+            ['convention_id'],
+            ['convention_id', 'league_id', 'player_name', 'goals', 'assists', 'team_name', 'team_abb', 'team_logo_url']
+        );
 
         return 0;
     }

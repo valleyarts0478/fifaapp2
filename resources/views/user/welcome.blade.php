@@ -67,7 +67,7 @@
                 <a href="/player_rank">
                  <img class="w-full" src="{{asset('storage/top/' . "team_player_rank_bn.jpg")}}" alt="player_rank">
                 </a>
-                <p class="absolute top-50 left-50 text-3xl md:text-xl text-white"><a href="/player_rank">PLAYER RANK</a></p>
+                <p class="absolute top-50 left-50 text-3xl md:text-xl text-white"><a href="/player_rank_total">PLAYER RANK</a></p>
               </div>
             </div>
 

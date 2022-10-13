@@ -11,6 +11,7 @@ use App\Http\Controllers\User\PlayerRankController;
 use App\Http\Controllers\User\TeamListController;
 use App\Http\Controllers\User\UserInfoController;
 use App\Http\Controllers\User\PlayerRecruitmentController;
+use App\Http\Controllers\User\PlayerRankTotalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +64,10 @@ Route::resource('player_recruitment', PlayerRecruitmentController::class)
 //     return view('team_owner.welcome');
 // })->middleware('guest');
 
+//得点王・アシスト王New
+Route::get('/player_rank_total', [PlayerRanktotalController::class, 'index'])
+    ->middleware('guest')
+    ->name('playerranktotal');
 //得点王・アシスト王
 Route::get('/player_rank', [PlayerRankController::class, 'index'])
     ->middleware('guest')
