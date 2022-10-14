@@ -64,8 +64,8 @@
 
             <div class="p-4 md:w-1/3">
               <div class="min-h-96 flex justify-center items-center py-4 md:py-4">
-                <a href="/player_rank">
-                 <img class="w-full" src="{{asset('storage/top/' . "team_player_rank_bn.jpg")}}" alt="player_rank">
+                <a href="/player_rank_total">
+                 <img class="w-full" src="{{asset('storage/top/' . "team_player_rank_bn.jpg")}}" alt="player_rank_total">
                 </a>
                 <p class="absolute top-50 left-50 text-3xl md:text-xl text-white"><a href="/player_rank_total">PLAYER RANK</a></p>
               </div>
