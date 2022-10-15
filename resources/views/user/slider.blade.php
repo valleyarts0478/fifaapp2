@@ -1,15 +1,20 @@
 <x-front.app>
 
 
-
 <!-- Slider main container -->
 <div class="swiper-container myswiper">
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
+    <div id="swiperWrapper" class="swiper-wrapper">
       <!-- Slides -->
-      <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/big.png') }}" width="30%"></div>
+      <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/big.png') }}"></div>
+      <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/AAM.jpg') }}"></div>
+      <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/FMZ.png') }}"></div>
+      {{-- <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/big.png') }}" width="30%"></div>
       <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/AAM.jpg') }}" width="30%"></div>
       <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/FMZ.png') }}" width="30%"></div>
+      <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/big.png') }}" width="30%"></div>
+      <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/AAM.jpg') }}" width="30%"></div>
+      <div class="swiper-slide"><img src="{{ asset('storage/teams/logo/FMZ.png') }}" width="30%"></div> --}}
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -19,10 +24,10 @@
     <div class="swiper-button-next"></div>
   
     <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
+    {{-- <div class="swiper-scrollbar"></div> --}}
   </div>
 
 
 
-    <script src="{{ mix('js/swiper.js') }}"></script>
+    {{-- <script src="{{ mix('js/swiper.js') }}"></script> --}}
 </x-front.app>

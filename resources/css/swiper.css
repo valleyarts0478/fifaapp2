@@ -1,4 +1,7 @@
 .swiper-container {
-  /* width: 600px; */
+  width: 200px;
   height: 200px;
 }
+/* .swiper-wrapper{
+  transition-timing-function: linear;
+} */
