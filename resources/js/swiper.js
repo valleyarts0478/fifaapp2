@@ -1,23 +1,31 @@
- // import Swiper JS
- import Swiper from 'swiper';
- // import Swiper styles
- import 'swiper/swiper-bundle.css';
+// import Swiper from 'swiper'; 最小限の機能しか入っていない
+import Swiper from 'swiper/bundle'; // 全ての機能が入っている
+// import Swiper styles
+import 'swiper/css';
 
 // core version + navigation, pagination modules:
-import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+// import Swiper, { Navigation, Pagination } from 'swiper';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-// configure Swiper to use modules
-SwiperCore.use([Navigation, Pagination]);
+ // import styles bundle
+ import 'swiper/css/bundle';
 
-// init Swiper:
-const swiper = new Swiper('.myswiper', {
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      loop: true,
-      autoplay: {
-          delay: 2000,
-          disableOnInteraction: false,
-        },
-});
+      const swiper = new Swiper('.swiper', {
+        autoplay: {
+            delay: 0,
+          },
+          mousewheel: true,
+          loop: true,
+          speed: 3000,
+          slidesPerView: 3,
+          centeredSlides: true,
+          preventInteractionOnTransition: true,
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+          }
+          
+      });

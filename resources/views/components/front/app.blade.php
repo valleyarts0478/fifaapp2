@@ -15,11 +15,20 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+        {{-- <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+      /> --}}
+      
+      
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         {{-- <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.min.js"></script> --}}
     </head>
+    <style>
+
+    </style>
+
     <body class="font-Khand">
         <header>
            <x-front.header />

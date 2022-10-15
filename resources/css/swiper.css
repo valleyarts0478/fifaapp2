@@ -1,7 +1,32 @@
-.swiper-container {
-  width: 200px;
-  height: 200px;
-}
-/* .swiper-wrapper{
-  transition-timing-function: linear;
-} */
+.swiper{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+   
+  .swiper-wrapper{
+    transition-timing-function: linear;
+  }
+   
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background-color: #fcf8df;
+  }
+   
+  .swiper-slide img{
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+  /*↓↓↓プログレスバー用のスタイル↓↓↓*/
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    transition-timing-function: linear;
+    background-color: #333;
+  }
+   
+  .swiper-pagination-progressbar{
+    position: relative;
+  }
