@@ -59,7 +59,10 @@ Route::get('/recruitment', function () {
 Route::resource('player_recruitment', PlayerRecruitmentController::class)
     ->middleware('guest');
 
-
+//スライダーテスト
+Route::get('/slider', function () {
+    return view('user/slider');
+})->middleware('guest')->name('slider');
 // Route::get('/team_owner/login', function () {
 //     return view('team_owner.welcome');
 // })->middleware('guest');

@@ -8370,22 +8370,20 @@ __webpack_require__.r(__webpack_exports__);
 
 swiper_core__WEBPACK_IMPORTED_MODULE_1__.default.use([swiper_core__WEBPACK_IMPORTED_MODULE_2__.default, swiper_core__WEBPACK_IMPORTED_MODULE_3__.default]); // init Swiper:
 
-var swiper = new swiper_core__WEBPACK_IMPORTED_MODULE_1__.default('.swiper-container', {
-  // Optional parameters
-  // direction: 'vertical',
-  loop: true,
-  // If we need pagination
+var swiper = new swiper_core__WEBPACK_IMPORTED_MODULE_1__.default('.myswiper', {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  },
   pagination: {
-    el: '.swiper-pagination'
+    el: ".swiper-pagination",
+    clickable: true
   },
-  // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  },
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar'
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
   }
 });
 })();

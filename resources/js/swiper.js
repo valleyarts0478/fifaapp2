@@ -1,7 +1,7 @@
-// import Swiper JS
-import Swiper from 'swiper';
-// import Swiper styles
-import 'swiper/swiper-bundle.css';
+ // import Swiper JS
+ import Swiper from 'swiper';
+ // import Swiper styles
+ import 'swiper/swiper-bundle.css';
 
 // core version + navigation, pagination modules:
 import SwiperCore, { Navigation, Pagination } from 'swiper/core';
@@ -10,24 +10,21 @@ import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 SwiperCore.use([Navigation, Pagination]);
 
 // init Swiper:
-const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    // direction: 'vertical',
-    loop: true,
-
-    // If we need pagination
+const swiper = new Swiper('.myswiper', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
     pagination: {
-        el: '.swiper-pagination',
+      el: ".swiper-pagination",
+      clickable: true,
     },
-
-    // Navigation arrows
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
 
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
+  
 });
