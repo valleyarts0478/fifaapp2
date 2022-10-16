@@ -19,7 +19,7 @@
       </a>
     </span>
     </div>
-    <script src="{{ mix('js/swiper.js') }}"></script>
+    {{-- <script src="{{ mix('js/swiper.js') }}"></script> --}}
    
   </footer>
   {{-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> --}}

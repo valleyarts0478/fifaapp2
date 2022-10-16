@@ -13,19 +13,37 @@ import 'swiper/css/pagination';
  // import styles bundle
  import 'swiper/css/bundle';
 
-      const swiper = new Swiper('.swiper', {
-        autoplay: {
-            delay: 0,
-          },
-          mousewheel: true,
-          loop: true,
-          speed: 3000,
-          slidesPerView: 3,
-          centeredSlides: true,
-          preventInteractionOnTransition: true,
-          pagination: {
-            el: '.swiper-pagination',
-            type: 'progressbar',
-          }
-          
-      });
+ const slideLength = document.querySelectorAll('.swiper-card .swiper-slide').length;
+
+  const initSwiper = () => {
+    const mySwiper = new Swiper('.swiper-card .swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      loop: true,
+      loopedSlides: slideLength,
+      speed: 5000,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      freeMode: {
+        enabled: true,
+        momentum: false,
+      },
+      grabCursor: true,
+      breakpoints: {
+        1025: {
+          spaceBetween: 32,
+        }
+      },
+      on: {
+        touchEnd: (swiper) => {
+          swiper.slideTo(swiper.activeIndex + 1);
+        }
+      }
+    });
+  };
+
+  window.addEventListener('load', function(){
+    initSwiper();
+  });
