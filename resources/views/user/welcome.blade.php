@@ -29,7 +29,7 @@
       <div class="w-full h-12 leading-8 py-2 text-xl text-center bg-ral-300">RAL-E 7th・7月上旬開催！</div>
       
      <!--slider start-->
-     <div id="swiper-teamlist" class="swiper-card l-section">
+     {{-- <div id="swiper-teamlist" class="swiper-card l-section">
       <div class="l-inner"> 
         <div class="swiper">
           <div class="swiper-wrapper">
@@ -126,7 +126,7 @@
           </div><!-- /swiper-wrapper -->
         </div><!-- /swiper -->
       </div>
-    </div>
+    </div> --}}
      <!--slider end-->
 
       <section class="w-full max-4xl p-8 text-gray-600 body-font">

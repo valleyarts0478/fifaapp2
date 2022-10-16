@@ -6,20 +6,21 @@
  
 .swiper-wrapper{
   transition-timing-function: linear;
+  -webkit-overflow-scrolling: touch
 }
  
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px 0;
+  padding: 25px 0px 0px 0px;
   background-color: #eeeeee;
 }
  
 .swiper-slide img{
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
 }
 /*↓↓↓プログレスバー用のスタイル↓↓↓*/
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
@@ -132,7 +133,7 @@
 }
 .swiper-card .slide {
   overflow: hidden;
-  width: 36rem;
+  width: 24rem;
   border-radius: 4px;
   -webkit-box-shadow: var(--box-shadow);
           box-shadow: var(--box-shadow);
@@ -185,7 +186,11 @@
     display: none !important;
   }
   .swiper-card .slide {
-    width: 16rem;
+    width: 12rem;
+    height: 12rem;
+  }
+  .swiper-card .slide-title {
+    margin-top: 0.8rem;
   }
 }
 
