@@ -133,7 +133,7 @@
 }
 .swiper-card .slide {
   overflow: hidden;
-  width: 24rem;
+  width: 16rem;
   border-radius: 4px;
   -webkit-box-shadow: var(--box-shadow);
           box-shadow: var(--box-shadow);
@@ -149,7 +149,7 @@
 .swiper-card .slide-content {
   padding: 1.2rem 1.8rem;
 }
-.swiper-card .slide-date {
+.swiper-card .slide-team {
   font-size: 1.2rem;
   line-height: 1;
   display: block;

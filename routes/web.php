@@ -9,9 +9,11 @@ use App\Http\Controllers\User\MatchController;
 use App\Http\Controllers\User\ConventionsResultsController;
 use App\Http\Controllers\User\PlayerRankController;
 use App\Http\Controllers\User\TeamListController;
-use App\Http\Controllers\User\UserInfoController;
+// use App\Http\Controllers\User\UserInfoController;
 use App\Http\Controllers\User\PlayerRecruitmentController;
 use App\Http\Controllers\User\PlayerRankTotalController;
+use App\Http\Controllers\User\WelcomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,18 +36,14 @@ use App\Http\Controllers\User\PlayerRankTotalController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('user/welcome');
-})->middleware('guest')->name('welcome');
-
-// Route::get('/infolist', [userInfoController::class, 'infolist'])
-//     ->middleware('guest')
-//     ->name('infolist');
+// Route::get('/', function () {
+//     return view('user.welcome');
+// })->middleware('guest')->name('welcome');
 
 
 Route::middleware('guest')->group(function () {
-    Route::get('/', [userInfoController::class, 'index'])->name('index');
-    Route::get('/infolist', [userInfoController::class, 'infolist'])->name('infolist');
+    Route::get('/', [WelcomeController::class, 'index'])->name('index');
+    Route::get('/infolist', [welcomeController::class, 'infolist'])->name('infolist');
 });
 
 Route::get('/regulation', function () {
