@@ -43,7 +43,7 @@
                 <div class="slide-media img-cover"><img src="{{ asset('storage/teams/logo/' . $team_name->team_logo_url) }}" alt="{{$team_name->team_logo_url}}"></div>
                  @endif
                 @endforeach
-                <div class="slide-content">
+                <div class="slide-content text-center">
                   <div class="slide-team">{{ $team_owner->team_name }}</div>
                   <div class="slide-title test">
                     <div class="flex flex-wrap justify-center"><div class="px-2">勝</div><div class="px-2">敗</div><div class="px-2">分</div></div>
