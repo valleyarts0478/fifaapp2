@@ -26,7 +26,7 @@
         </div>
         <!-- text end -->
       </section>
-      <div class="w-full h-12 leading-8 py-2 text-xl text-center bg-ral-300">RAL-E 7th・7月上旬開催！</div>
+      <div class="w-full h-12 leading-8 py-2 text-xl text-center bg-ral-300">RAL-E 8th・11月13日開幕！</div>
      <!--slider start-->
      <div id="swiper-teamlist" class="swiper-card l-section">
       <div class="l-inner">
