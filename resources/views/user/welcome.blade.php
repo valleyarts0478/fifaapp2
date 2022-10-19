@@ -45,7 +45,14 @@
                 @endforeach
                 <div class="slide-content">
                   <div class="slide-team">{{ $team_owner->team_name }}</div>
-                  <p class="slide-title text-center">{{ $team_owner->win }}勝{{ $team_owner->lose }}敗{{ $team_owner->draw }}分</p>
+                  <div class="slide-title test">
+                    <div class="flex flex-wrap justify-center"><div class="px-2">勝</div><div class="px-2">敗</div><div class="px-2">分</div></div>
+                    <div class="flex flex-wrap justify-center">
+                      <div class="px-3 leading-5 text-xl">{{ $team_owner->win }}</div>
+                      <div class="px-3 leading-5 text-xl">{{ $team_owner->lose }}</div>
+                      <div class="px-3 leading-5 text-xl">{{ $team_owner->draw }}</div>
+                    </div>
+                  </div>
                 </div>
               </article>
             </a>
