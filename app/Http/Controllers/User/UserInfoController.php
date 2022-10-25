@@ -21,17 +21,13 @@ class UserInfoController extends Controller
 
         return view('user.welcome', compact('infolist', 'team_owners'));
     }
+    
     public function infolist()
     {
         $infolist = Infomation::select('title', 'post', 'created_at')->orderBy('created_at', 'desc')->paginate(10);
         // dd($infolist);
         return view('user.infolist', compact('infolist'));
     }
-    // public function teamlist()
-    // {
-    //     //降順の最初のレコードを取得
-    //     $team_owenrs = Team_owner::all();
-
-    //     return view('user.welcome', compact('team_owners'));
-    // }
+    
+    
 }

@@ -19,8 +19,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $infolist = Infomation::select('title', 'created_at')
-            ->orderBy('created_at', 'desc')
+        $infolist = Infomation::orderBy('created_at', 'desc')
             ->paginate(3);
 
         $convention = Convention::orderBy('id', 'desc')->first();
@@ -63,10 +62,18 @@ class WelcomeController extends Controller
 
         return view('user.welcome', compact('convention', 'infolist', 'conventionsResults', 'team_names'));
     }
-    public function infolist()
+    // public function infolist()
+    // {
+    //     $infolist = Infomation::select('title', 'post', 'created_at')->orderBy('created_at', 'desc')->paginate(10);
+    //     // dd($infolist);
+    //     return view('user.infolist', compact('infolist'));
+    // }
+    public function show($id)
     {
-        $infolist = Infomation::select('title', 'post', 'created_at')->orderBy('created_at', 'desc')->paginate(10);
-        // dd($infolist);
-        return view('user.infolist', compact('infolist'));
+         //infolistを取得
+         $info = Infomation::findOrFail($id);
+
+         return view('user.infolist_show', compact('info'));
     }
+
 }

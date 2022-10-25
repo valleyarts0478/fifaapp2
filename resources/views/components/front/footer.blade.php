@@ -19,23 +19,9 @@
       </a>
     </span>
     </div>
-    {{-- <script src="{{ mix('js/swiper.js') }}"></script> --}}
    
   </footer>
-  {{-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> --}}
- {{-- <script>
-  const swiper = new Swiper(".swiper", {
-    autoplay: {
-    delay: 0,
-  },
-  loop: true,
-  speed: 3000,
-  slidesPerView: 3,
-  centeredSlides: true,
-  preventInteractionOnTransition: true,
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'progressbar',
-  }
-  });
-  </script> --}}
+  <script src="{{ asset('ckeditor/ckeditor.js')}}"></script>
+<script>
+    CKEDITOR.replace('editor');
+</script>

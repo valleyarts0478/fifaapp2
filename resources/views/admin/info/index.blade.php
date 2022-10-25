@@ -25,7 +25,7 @@
                 <tbody>
                   <tr>
                     <td>{{$info->id}}</td>
-                    <td><a href="{{ route('admin.info.edit', ['info' => $info->id]) }}">{{$info->title}}</a></td>
+                    <td><a class="text-blue-700" href="{{ route('admin.info.edit', ['info' => $info->id]) }}">{{$info->title}}</a></td>
                     <td>{{$info->updated_at->format('Y-m-d')}}</td>
                   </tr>
                 </tbody>

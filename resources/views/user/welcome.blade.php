@@ -2,9 +2,7 @@
 
  <div class="max-w-screen-lg py-4 mx-auto">
     <div class="container md:px-8 mx-auto">
-      <!-- slider - start -->
-        
-      <!-- slider - end -->
+
       <section class="min-h-96 flex justify-center items-center flex-1 shrink-0 bg-gray-100 overflow-hidden shadow-lg relative py-16 md:py-20 xl:py-48">
         <!-- image - start -->
         <img src="{{asset('storage/top/' . "rale_top.jpg")}}" loading="lazy" alt="ral-e" class="w-full h-full object-cover object-center absolute inset-0" />
@@ -69,7 +67,7 @@
           @foreach($infolist as $info)
           <ul>
             <li class="border-dashed border-b text-md text-blue-400 border-gray-400 p-2 m-2">
-              <a href="{{ route('user.infolist')}}"><i class="-ml-8 text-ral-400 fa-solid fa-clipboard-check"></i><span class="ml-4">{{$info->title}}</span></a>
+              <a href="{{ route('user.infolist.show', $info->id)}}"><i class="-ml-8 text-ral-400 fa-solid fa-clipboard-check"></i><span class="ml-4">{{$info->title}}</span></a>
             </li>
           </ul>
           @endforeach

@@ -1,4 +1,14 @@
 /*===========
+レイアウト全般
+===========*/
+.infolist a{
+	color: #1d3994;
+}
+.infolist a:hover{
+	color: #1d3994;
+    opacity: 0.8;
+}
+/*===========
 .scroll-box
 ===========*/
  

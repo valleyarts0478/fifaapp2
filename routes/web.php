@@ -44,7 +44,9 @@ use App\Http\Controllers\User\WelcomeController;
 Route::middleware('guest')->group(function () {
     Route::get('/', [WelcomeController::class, 'index'])->name('index');
     Route::get('/infolist', [welcomeController::class, 'infolist'])->name('infolist');
+    Route::get('/infolist/{id}', [welcomeController::class, 'show'])->name('infolist.show');
 });
+
 
 Route::get('/regulation', function () {
     return view('user/regulation');
@@ -57,7 +59,7 @@ Route::get('/recruitment', function () {
 Route::resource('player_recruitment', PlayerRecruitmentController::class)
     ->middleware('guest');
 
-//スライダーテスト
+//スライダー
 Route::get('/slider', function () {
     return view('user/slider');
 })->middleware('guest')->name('slider');
@@ -70,9 +72,9 @@ Route::get('/player_rank_total', [PlayerRanktotalController::class, 'index'])
     ->middleware('guest')
     ->name('playerranktotal');
 //得点王・アシスト王
-Route::get('/player_rank', [PlayerRankController::class, 'index'])
-    ->middleware('guest')
-    ->name('player_rank');
+// Route::get('/player_rank', [PlayerRankController::class, 'index'])
+//     ->middleware('guest')
+//     ->name('player_rank');
 //ランキングなし
 Route::get('/no_match', [PlayerRankController::class, 'no_match'])
     ->middleware('guest')
