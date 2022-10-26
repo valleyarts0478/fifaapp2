@@ -8,7 +8,7 @@
       <div class="px-12">
         <div class="infolist">{!! $info->post !!}</div>
       </div>
-      <div class="mt-4 text-right">{{ $info->created_at }}</div>
+      <div class="mt-4 text-right">{{ $info->updated_at }}</div>
     </div>
     
   </div>
