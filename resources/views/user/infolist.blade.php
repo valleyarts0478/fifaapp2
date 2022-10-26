@@ -14,7 +14,7 @@
         <li>
             <section class="rounded-md">
                 @foreach($infolist as $info)
-                <h3 class="title flex justify-center items-center">{{$info->title}}<span class="ml-auto text-sm text-gray-400">{{$info->created_at->format('Y-m-d')}}</span></h3>
+                <h3 class="title flex justify-center items-center">{{$info->title}}<span class="ml-auto text-sm text-gray-400">{{$info->updated_at->format('Y-m-d')}}</span></h3>
                 <div class="box text-sm">
                     <ul class="ml-4 list-disc">
                         {{-- <li>{!! nl2br(htmlspecialchars($info->post)) !!}</li>--}}
