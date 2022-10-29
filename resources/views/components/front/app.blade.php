@@ -29,7 +29,7 @@
 
     </style>
 
-    <body class="font-Khand">
+    <body ontouchstart="" class="font-Khand">
         <header>
            <x-front.header />
         </header>
