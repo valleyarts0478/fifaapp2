@@ -28,37 +28,45 @@ class WelcomeController extends Controller
         $team_owners = Team_owner::where('convention_id', $convention->id)->get();
 
         //チーム順位取得
+        // $conventionsResults = ConventionsResult::where('convention_id', $convention->id)->get();
+
+        $true_false = ConventionsResult::where('convention_id', $convention->id)->exists();
+
+
+        //$conventionsResultsのレコードがあるなら
+        if($true_false === true){
+
+        //チーム順位取得
         $conventionsResults = ConventionsResult::where('convention_id', $convention->id)->get();
 
-       $result_id = [];
-       foreach($conventionsResults as $result){
-        $result_id = $result->convention_id;
-       }
-
-       if($result_id === $convention->id){
         $team_info = [];
         foreach($conventionsResults as $result){
             $team_info['team_name'][] = $result->team_name;
         }
 
         // 画像情報とるため
-        $team_names = Team_owner::whereIn('team_name', $team_info['team_name'])->get();
-       }else{
-        $old_no = $convention->id-1;
-        $convention = Convention::where('id', $old_no)->first();
+        $team_names = Team_owner::where('convention_id', $convention->id)
+        ->whereIn('team_name', $team_info['team_name'])
+        ->get();
 
+        //$conventionsResultsが空なら
+        }else{
         //最新から1を引いたconvention_idを取得
-        $conventionsResults = ConventionsResult::where('convention_id', $old_no)->get();
-        
+        $conventionsResults = ConventionsResult::where('convention_id', $convention->id-1)->get();
+  
         $team_info = [];
         foreach($conventionsResults as $result){
             $team_info['team_name'][] = $result->team_name;
         }
-
         // 画像情報とるため
-        $team_names = Team_owner::whereIn('team_name', $team_info['team_name'])->get();
-        
-       }        
+        $team_names = Team_owner::where('convention_id', $convention->id-1)
+        ->whereIn('team_name', $team_info['team_name'])
+        ->get();
+        //1つ前の大会IDを取得
+        $convention = Convention::where('id', $convention->id-1)->first();
+
+        }
+        // dd($convention->convention_no);
 
         return view('user.welcome', compact('convention', 'infolist', 'conventionsResults', 'team_names'));
     }

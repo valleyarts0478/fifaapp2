@@ -155,39 +155,29 @@ class TeamListController extends Controller
 
         //降順の最初のレコードを取得
         $convention = Convention::orderBy('id', 'desc')->first();
+        
         //league1
         $games = Game::where('convention_id', $convention->id)
             ->where('game_date', $date)
             ->where('league_id', 1)
             ->orderBy('game_date', 'asc')->get();
+            // dd($games);
 
-        // dd($games);
-        // foreach ($games as $game) {
-        //     $team_list[$game->game_date->format('Y-m-d')][$game->id] = [
-        //         'home_team' => $game->home_team,
-        //         'away_team' => $game->away_team,
-        //     ];
-        // }
-
-        //league2
-        // $games_second = Game::where('convention_id', $convention->id)
-        //     ->where('game_date', $date)
-        //     ->where('league_id', 2)
-        //     ->orderBy('game_date', 'asc')->get();
-
-        // dd($team_list);
         //チームロゴ取得用
-        $game_info = Game::where(function ($query) use ($convention) {
-            $query->where('convention_id', $convention->id);
-        })->orderBy('game_date', 'asc')->get();
+        // $game_info = Game::where(function ($query) use ($convention) {
+        //     $query->where('convention_id', $convention->id);
+        // })->orderBy('game_date', 'asc')->get();
 
-        foreach ($game_info as $info) {
+        $team_info = [];
+        foreach ($games as $info) {
             $team_info['team_name'][] = $info->home_team;
             $team_info['team_name'][] = $info->away_team;
         }
-        $team_names = Team_owner::whereIn('team_name', $team_info['team_name'])->get();
 
+        $team_names = Team_owner::where('convention_id', $convention->id)
+        ->whereIn('team_name', $team_info['team_name'])->get();
 
+        // dd($team_names);
         return view('user.day_schedule', compact('games', 'team_names'));
     }
 
@@ -207,15 +197,16 @@ class TeamListController extends Controller
 
         // dd($games_second);
         //チームロゴ取得用
-        $game_info = Game::where(function ($query) use ($convention) {
-            $query->where('convention_id', $convention->id);
-        })->orderBy('game_date', 'asc')->get();
+        // $game_info = Game::where(function ($query) use ($convention) {
+        //     $query->where('convention_id', $convention->id);
+        // })->orderBy('game_date', 'asc')->get();
 
-        foreach ($game_info as $info) {
+        foreach ($games_second as $info) {
             $team_info['team_name'][] = $info->home_team;
             $team_info['team_name'][] = $info->away_team;
         }
-        $team_names = Team_owner::whereIn('team_name', $team_info['team_name'])->get();
+        $team_names = Team_owner::where('convention_id', $convention->id)
+        ->whereIn('team_name', $team_info['team_name'])->get();
 
 
         // dd($games);
@@ -247,8 +238,6 @@ class TeamListController extends Controller
         $away_goal_assists = Goal_Assist::wherehas('team_owner', function ($query) use ($away_owner) {
             $query->where('team_name', $away_owner->team_name);
         })->where('game_result_id', $id)->get();
-
-
 
 
         return view('user.day_schedule_show', compact('home_game', 'home_owner', 'home_goal_assists', 'games', 'away_owner', 'away_goal_assists'));

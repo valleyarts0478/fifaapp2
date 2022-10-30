@@ -11,8 +11,7 @@
             <h3 class="title">選手登録</h3>
             <div class="box text-sm">
                 <ul class="ml-4 list-disc">
-                    <li>1チーム20名まで</li>
-                    <li>選手に「com」を1名追加登録してください。</li>
+                    <li>1チーム20名まで(comは除く)</li>
                     <li>毎週土曜日の夜12時までに登録した選手のみ翌日試合参加可能</li>
                     <li>退団する選手は申告制で運営側で退団処理をします。</li>
                 </ul> 
