@@ -82,7 +82,8 @@ class TeamListController extends Controller
                 $team_info['team_name'][] = $info->home_team;
                 $team_info['team_name'][] = $info->away_team;
             }
-            $team_names = Team_owner::whereIn('team_name', $team_info['team_name'])->get();
+            $team_names = Team_owner::where('convention_id', $convention->id)
+            ->whereIn('team_name', $team_info['team_name'])->get();
         }
 
 
