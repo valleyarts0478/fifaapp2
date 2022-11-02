@@ -21,10 +21,21 @@
                         <div class="container px-5 py-2 mx-auto flex">
                           <div class="lg:w-1/2 md:w-1/2 bg-white rounded-lg p-4 md:p-4 flex flex-col md:mx-auto w-ful md:mt-0 relative z-10 shadow-md">
                             <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">選手登録</h2>
-                            <ul class="leading-relaxed mb-5 text-gray-600　list-inside">
+                            <ul class="leading-relaxed mb-5 text-gray-600 list-inside">
                               <li>PSIDで1名ずつ登録</li>
                               <li>半角英数字のみ使用</li>
                             </ul>
+
+                          
+                            <label for="convention_id" class="leading-7 text-sm text-gray-600">大会名</label>
+                            <select name="convention_id" id="convention_id" class="w-full mb-4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                              @foreach($team_owners as $team_owner)
+                               <option value="{{ $team_owner->convention_id }}" >
+                                 {{ $team_owner->convention->convention_no }}
+                               </option>
+                              @endforeach
+                            </select>
+                     
 
                             <label for="team_owner_id" class="leading-7 text-sm text-gray-600">チーム名</label>
                           <select name="team_owner_id" id="team_owner_id" class="w-full mb-4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">

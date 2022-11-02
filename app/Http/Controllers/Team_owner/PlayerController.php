@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Player;
 use App\Models\Position;
 use App\Models\Team_owner;
+use App\Models\Convention;
 use App\Http\Requests\PlayerRequest;
 use App\Rules\Player_no_check;
+use App\Rules\Player_name_check;
 use App\Rules\alpha_num_check;
 // use App\Rules\num_only;
 use Illuminate\Support\Facades\Validator;
@@ -46,7 +48,7 @@ class PlayerController extends Controller
         $team_owners = Team_owner::where('id', $teamId)->get();
 
         $players = Player::where('team_owner_id', Auth::id())
-            ->select('id', 'team_owner_id', 'position_id', 'player_no', 'player_name')
+            // ->select('id', 'team_owner_id', 'position_id', 'player_no', 'player_name')
             ->orderBy('created_at', 'desc')
             ->get();
         // dd($players);
@@ -70,7 +72,7 @@ class PlayerController extends Controller
             ->orderBy('id', 'asc')->get();
 
         $players = Player::where('team_owner_id', Auth::id())
-            ->select('id', 'team_owner_id', 'position_id', 'player_no', 'player_name')
+            // ->select('id', 'team_owner_id', 'position_id', 'player_no', 'player_name')
             ->orderBy('created_at', 'desc')
             ->get();
         // dd($players);
@@ -100,10 +102,12 @@ class PlayerController extends Controller
                 'team_owner_id' => 'integer',
                 'position_id' => 'integer|max:5',
                 'player_no' => ['required', 'integer', 'min:1', 'max:99', new Player_no_check],
-                'player_name' => ['required', 'unique:players', 'string', 'max:50', new alpha_num_check],
+                'player_name' => ['required', 'string', 'max:50', new Player_name_check, new alpha_num_check],
+                // 'player_name' => ['required', 'unique:players', 'string', 'max:50', new alpha_num_check],
 
             ]);
             $player = new Player();
+            $player->convention_id = $request->convention_id;
             $player->team_owner_id = Auth::id();
             $player->position_id = $request->position_id;
             $player->player_no = $request->player_no;
@@ -138,15 +142,15 @@ class PlayerController extends Controller
      */
     public function edit($id)
     {
-        // $teamId = Auth::id();
-        // $team_owner = Team_owner::where('id', Auth::id())->get();
+        $teamId = Auth::id();
+        $team_owners = Team_owner::where('id', Auth::id())->get();
 
         $player = Player::findOrFail($id);
         // dd($player->position_id);
         $positions = Position::all();
 
         // dd($player);
-        return view('team_owner.players.edit', compact('player', 'positions'));
+        return view('team_owner.players.edit', compact('team_owners', 'player', 'positions'));
     }
 
     /**
@@ -158,6 +162,8 @@ class PlayerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $convention = Convention::orderBy('id', 'desc')->first();
+
         $player = Player::findOrFail($id);
 
         $date1 = new DateTime('now'); //現在の日時
@@ -176,13 +182,30 @@ class PlayerController extends Controller
             $request->validate([
                 'team_owner_id' => 'integer|max:255', //255までの数字を許可
                 'position_id' => 'integer|max:5', //5までの入力を許可
-                'player_no' => ['required', 'integer', 'min:1', 'max:99'], Rule::unique('players')->ignore($player->id)->where(function ($query) {
+                'player_no' => [
+                    'required', 
+                    'integer', 
+                    'min:1', 
+                    'max:99', 
+                    Rule::unique('players')->ignore($player->id)
+                    ->where(function ($query) {
                     $query->where('team_owner_id', Auth::id());
-                }),
-                'player_name' => ['required', 'string', 'max:50', Rule::unique('players')->ignore($player->id), new alpha_num_check],
+                })],
+                'player_name' => [
+                'required', 
+                'string', 
+                'max:50', 
+                new alpha_num_check,
+                Rule::unique('players', 'player_name')->ignore($player->id)
+                    ->where(function ($query) use ($convention) {
+                    $query->where('convention_id', $convention->id);
+               
+            })],
 
             ]);
+
             $player = Player::findOrFail($id);
+            $player->convention_id = $request->convention_id;
             $player->team_owner_id = $request->team_owner_id;
             $player->position_id = $request->position_id;
             $player->player_no = $request->player_no;

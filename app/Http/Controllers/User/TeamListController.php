@@ -222,7 +222,7 @@ class TeamListController extends Controller
         $home_owner = Team_owner::where('team_name', $home_game->home_team)->first();
 
         //リレーション先のカラムを利用する場合の書き方
-        //$away_ownerを外からつかうためuseで読み込む
+        //$home_ownerを外からつかうためuseで読み込む
         $home_goal_assists = Goal_Assist::wherehas('team_owner', function ($query) use ($home_owner) {
             $query->where('team_name', $home_owner->team_name);
         })->where('game_result_id', $id)->get();

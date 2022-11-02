@@ -5,10 +5,11 @@ namespace App\Rules;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\Team_owner;
 use App\Models\Player;
+use App\Models\Team_owner;
+use App\Models\Convention;
 
-class Player_no_check implements Rule
+class Player_name_check implements Rule
 {
     /**
      * Create a new rule instance.
@@ -29,10 +30,15 @@ class Player_no_check implements Rule
      */
     public function passes($attribute, $value)
     {
-         $player = Player::where('player_no', $value)
-         ->where('team_owner_id', Auth::id());
+        $convention = Convention::orderBy('id', 'desc')->first();
+        // dd($convention->team_owner->email);
+        $team_owner = Team_owner::where('convention_id', $convention->id)->first();
+        // dd($team_owner->convention->convention_no);
 
-        return $player->doesntExist();
+        $player = Player::where('player_name', $value)
+        ->where('convention_id', $convention->id);
+
+       return $player->doesntExist();
 
     }
 
@@ -43,7 +49,6 @@ class Player_no_check implements Rule
      */
     public function message()
     {
-        return 'その背番号はすでに存在しています。';
-        
+        return 'その選手名はすでに存在しています。';
     }
 }

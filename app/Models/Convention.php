@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Team_owner;
 use App\Models\GameResult;
+use App\Models\Player;
 
 
 class Convention extends Authenticatable
@@ -50,6 +51,11 @@ class Convention extends Authenticatable
     {
 
         return $this->hasOne(Team_owner::class);
+    }
+    public function players()
+    {
+
+        return $this->hasMany(Player::class);
     }
     public function games()
     {

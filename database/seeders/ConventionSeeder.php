@@ -16,18 +16,18 @@ class ConventionSeeder extends Seeder
     {
         DB::table('conventions')->insert([
             [
-                'id' => 5,
-                'convention_no' => 'RAL-E-4th',
-                'created_at' => '2022/01/01 11:11:11'
-            ],
-            [
                 'id' => 6,
-                'convention_no' => 'RAL-E-5th',
+                'convention_no' => 'RAL-E-6th',
                 'created_at' => '2022/01/01 11:11:11'
             ],
             [
                 'id' => 7,
-                'convention_no' => 'RAL-E-6th',
+                'convention_no' => 'RAL-E-7th',
+                'created_at' => '2022/01/01 11:11:11'
+            ],
+            [
+                'id' => 8,
+                'convention_no' => 'RAL-E-8th',
                 'created_at' => '2022/01/01 11:11:11'
             ],
         ]);

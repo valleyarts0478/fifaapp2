@@ -16,11 +16,11 @@ class LeagueSeeder extends Seeder
     {
         DB::table('leagues')->insert([
             [
-                'league_name' => 'RAL-E1',
+                'league_name' => 'Agroup',
                 'created_at' => '2021/01/01 11:11:11',
             ],
             [
-                'league_name' => 'RAL-E2',
+                'league_name' => 'Bgroup',
                 'created_at' => '2021/01/01 11:11:11',
             ],
         ]);

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Team_owner;
 use App\Models\Game;
 use App\Models\Position;
+use App\Models\Convention;
+
 
 
 class Player extends Authenticatable
@@ -16,6 +18,7 @@ class Player extends Authenticatable
     use HasFactory;
 
     protected $fillable = [
+        'convention_id',
         'team_owner_id',
         'position_id',
         'player_no',
@@ -26,6 +29,11 @@ class Player extends Authenticatable
     {
 
         return $this->belongsTo(Team_owner::class);
+    }
+    public function convention()
+    {
+
+        return $this->belongsTo(Convention::class);
     }
     public function game()
     {
