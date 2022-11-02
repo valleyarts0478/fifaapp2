@@ -38,7 +38,7 @@
                 <a href="/team_rank" class="ml-4 text-sm hover:text-gray-900">順位表</a>
               </li>
               <li>
-                <a href="/player_rank" class="ml-4 text-sm hover:text-gray-900">得点・アシスト</a>
+                <a href="/player_rank_total" class="ml-4 text-sm hover:text-gray-900">得点・アシスト</a>
               </li>
               <li>
                 <a href="/schedule_list" class="ml-4 text-sm hover:text-gray-900">日程表</a>
