@@ -69,7 +69,7 @@
                     <div class="flex justify-around w-full">
                       <h2 class="w-32 mt-3 text-lg text-left font-bold">
                         {{$league1_assisttotal->player_name}}
-                        <div class="text-sm">GOAL:<span class="text-md">{{$league1_assisttotal->assists}}</span></div>
+                        <div class="text-sm">ASSIST:<span class="text-md">{{$league1_assisttotal->assists}}</span></div>
                       </h2> 
                       <img class="w-16 h-16 ml-auto" src="{{ asset('storage/teams/logo/' . $league1_assisttotal->team_logo_url)}}">
                     </div>
@@ -145,7 +145,7 @@
                     <div class="flex justify-around w-full">
                       <h2 class="w-32 mt-3 text-lg text-left font-bold">
                         {{$league2_assisttotal->player_name}}
-                        <div class="text-sm">GOAL:<span class="text-md">{{$league2_assisttotal->assists}}</span></div>
+                        <div class="text-sm">ASSIST:<span class="text-md">{{$league2_assisttotal->assists}}</span></div>
                       </h2> 
                       <img class="w-16 h-16 ml-auto" src="{{ asset('storage/teams/logo/' . $league2_assisttotal->team_logo_url)}}">
                     </div>
