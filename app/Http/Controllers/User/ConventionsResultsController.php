@@ -41,7 +41,8 @@ class ConventionsResultsController extends Controller
         }
         // dd($team_info);
         // 画像情報とるため
-        $team_names = Team_owner::whereIn('team_name', $team_info['team_name'])->get();
+        $team_names = Team_owner::where('convention_id', $convention->id)
+        ->whereIn('team_name', $team_info['team_name'])->get();
         // $count = count($team_names);
         // dd($cnt, $team_names);
         //flag用
