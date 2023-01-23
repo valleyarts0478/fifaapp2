@@ -46,13 +46,13 @@
           <div>アシスト王</div>
           <div class="font-bold">{{ $player_rank_assist1->player_name }}</div>
           <div class="text-xs">({{ $player_rank_assist1->team_name }})</div>
-          <div>{{ $player_rank_assist1->assists }}ゴール</div>
+          <div>{{ $player_rank_assist1->assists }}アシスト</div>
         </div>
         <div class="mx-auto w-36 h-36">
           <div>アシスト王</div>
           <div class="font-bold">{{ $player_rank_assist2->player_name }}</div>
           <div class="text-xs">({{ $player_rank_assist2->team_name }})</div>
-          <div>{{ $player_rank_assist2->assists }}ゴール</div>
+          <div>{{ $player_rank_assist2->assists }}アシスト</div>
         </div>
       </div>
       <!--アシスト王 END-->
