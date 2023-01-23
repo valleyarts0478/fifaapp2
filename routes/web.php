@@ -74,7 +74,7 @@ Route::get('/player_rank_total', [PlayerRanktotalController::class, 'index'])
 //過去大会結果
 Route::middleware('guest')->group(function () {
   Route::get('/past_competitions', [ConventionsResultsController::class, 'past'])->name('past_competitions'); 
-//   Route::get('/current_competitions', [ConventionsResultsController::class, 'current'])->name('current_competitions');
+  Route::get('/current_competitions', [ConventionsResultsController::class, 'current'])->name('current_competitions');
 });
    
 //得点王・アシスト王
