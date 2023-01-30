@@ -4,7 +4,7 @@
    <section class="text-gray-600 font-sans">
     <div class="container max-w-4xl px-4 mx-auto md:px-8">
       <h2 class="text-2xl bg-gray-100 p-2">{{ $convention->convention_no }}</h2>
-      <!-- <div class="py-2 mb-4 text-2xl font-bold text-center">総合優勝：{{ $convention_results2->team_name }}</div> -->
+      <div class="py-2 mb-4 text-2xl font-bold text-center">総合優勝：{{ $convention_results2->team_name }}</div>
       
     <div class="w-full h-160 pt-8 mx-auto bg-cover bg-no-repeat bg-center" style="background-image: url({{ asset('storage/info/' . 'bg_past1.jpg')}})">
       <div class="flex">
