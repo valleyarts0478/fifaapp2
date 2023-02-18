@@ -16,7 +16,7 @@ class TeamOwnerAddSeeder extends Seeder
     public function run()
     {
         DB::table('team_owners')->insert([
-            
+
             [
                 'id' => '41',
                 'name' => 'FC Mochi Mochi',
@@ -28,7 +28,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'FMM',
                 'twitter_add' => '@FCMochiMochi1',
                 'team_logo_url' => 'FMM.png',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '42',
@@ -41,7 +41,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'SCK',
                 'twitter_add' => '@kohaproclub',
                 'team_logo_url' => 'SCK.png',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '43',
@@ -54,7 +54,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'SCE',
                 'twitter_add' => '@Emslada001',
                 'team_logo_url' => 'SCE.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '44',
@@ -67,7 +67,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'CRO',
                 'twitter_add' => '@TKOedeperion',
                 'team_logo_url' => 'CRO.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '45',
@@ -80,7 +80,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'VAR',
                 'twitter_add' => '@FcRamosun',
                 'team_logo_url' => 'VAR.png',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '46',
@@ -93,7 +93,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'BIG',
                 'twitter_add' => '@BIGBANG_evehide',
                 'team_logo_url' => 'BIG.png',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '47',
@@ -106,7 +106,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'BRT',
                 'twitter_add' => '@breaktime___',
                 'team_logo_url' => 'BRT.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '48',
@@ -119,7 +119,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'ELB',
                 'twitter_add' => '@EL__Brigada',
                 'team_logo_url' => 'ELB.png',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '49',
@@ -132,7 +132,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'MSP',
                 'twitter_add' => '@minospacejp',
                 'team_logo_url' => 'MSP.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '50',
@@ -145,7 +145,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'MAR',
                 'twitter_add' => '@BfMarlboro_',
                 'team_logo_url' => 'MAR.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '51',
@@ -158,7 +158,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'NBC',
                 'twitter_add' => '@nabisco_Co',
                 'team_logo_url' => 'NBC.png',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '52',
@@ -170,8 +170,8 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_name' => 'FC HAKODATEJIN',
                 'team_abb' => 'FCH',
                 'twitter_add' => '@HFifa21',
-                'team_logo_url' => 'FCH.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'team_logo_url' => 'FCH.png',
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '53',
@@ -184,7 +184,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'RRR',
                 'twitter_add' => '@FCROSE2022',
                 'team_logo_url' => 'RRR.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '54',
@@ -197,7 +197,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'AND',
                 'twitter_add' => '@Analytics_fifa_',
                 'team_logo_url' => 'AND.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '55',
@@ -210,7 +210,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'NNC',
                 'twitter_add' => '@FCnanac',
                 'team_logo_url' => 'NNC.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '56',
@@ -223,7 +223,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'FCA',
                 'twitter_add' => '@FC_Ardimento',
                 'team_logo_url' => 'FCA.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '57',
@@ -236,7 +236,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'ELL',
                 'twitter_add' => '@ellocoefootball',
                 'team_logo_url' => 'ELL.png',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '58',
@@ -249,7 +249,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'KTM',
                 'twitter_add' => '@katanmaike',
                 'team_logo_url' => 'KTM.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '59',
@@ -262,7 +262,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'FED',
                 'twitter_add' => '@fcedamame012',
                 'team_logo_url' => 'FED.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '60',
@@ -275,7 +275,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'OCF',
                 'twitter_add' => '@ocolle_cf',
                 'team_logo_url' => 'OCF.png',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '61',
@@ -288,7 +288,7 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'MAJ',
                 'twitter_add' => '@MAJOR21381860',
                 'team_logo_url' => 'MAJ.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ],
             [
                 'id' => '62',
@@ -301,8 +301,9 @@ class TeamOwnerAddSeeder extends Seeder
                 'team_abb' => 'FBA',
                 'twitter_add' => '@Bossazul11',
                 'team_logo_url' => 'FBA.jpg',
-                'created_at' => '2023-02-17 0 =>00 =>00'
+                'created_at' => '2023-02-17 0:00:00'
             ]
+        
 
         ]);
     }
