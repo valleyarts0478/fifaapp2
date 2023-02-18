@@ -131,14 +131,14 @@
               </div>
             </div>
 
-            {{-- <div class="p-4 md:w-1/3">
+            <div class="p-4 md:w-1/3">
               <div class="min-h-96 flex justify-center items-center py-4 md:py-4">
                 <a href="/past_competitions">
                   <img class="w-full" src="{{asset('storage/top/' . "schedule_bn.jpg")}}" alt="schedule_list">
                 </a>
                 <p class="absolute top-50 left-50 text-3xl text-center md:text-xl text-white"><a href="/past_competitions">過去大会結果</a></p>
               </div>
-            </div> --}}
+            </div>
 
           </div>
         </div>
