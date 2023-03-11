@@ -56,6 +56,13 @@ Route::get('/recruitment', function () {
     return view('user/recruitment');
 })->middleware('guest')->name('recruitment');
 
+//最新の大会結果レコードを過去へコピー
+// Route::get('/pastmove', [WelcomeController::class, 'pastmove']);
+
+// Route::get('/pastmove', function () {
+//     Artisan::call('command:past');
+// })->middleware('guest')->name('pastmove');
+
 Route::resource('player_recruitment', PlayerRecruitmentController::class)
     ->middleware('guest');
 

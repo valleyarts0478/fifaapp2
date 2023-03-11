@@ -12,6 +12,7 @@ use App\Models\ConventionsResult;
 use App\Models\League;
 use App\Models\Team_owner;
 use App\Models\PlayerRankTotal;
+use Artisan; //追加
 
 class ConventionsResultsController extends Controller
 {

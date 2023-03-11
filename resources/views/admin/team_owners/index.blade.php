@@ -35,7 +35,8 @@
                                 <td class="md:px-2 py-3">{{ $team_owner->id }}</td>
                                 <td class="md:px-2 py-3">{{ $team_owner->convention->convention_no }}</td>
                                 <td class="md:px-2 py-3">{{ $team_owner->league->league_name }}</td>
-                                <td class="md:px-2 py-3">{{ $team_owner->team_name }}</td>
+                                {{-- <td class="md:px-2 py-3"><a href="{{ route('admin.team_player.team_player', ['team_owner' => $team_owner->id ]) }}">{{ $team_owner->team_name }}</a></td> --}}
+                                <td class="md:px-2 py-3 text-blue-400"><a href="{{ route('admin.team_player.edit', ['team_player' => $team_owner->id ]) }}">{{ $team_owner->team_name }}</a></td>
                                 <td class="md:px-2 py-3">{{ $team_owner->team_abb }}</td>
                                 <td class="md:px-2 py-3">
                                   <img src="{{ asset('storage/teams/logo/' . $team_owner['team_logo_url']) }}" width="30" height="30">

@@ -191,25 +191,24 @@ class PlayerController extends Controller
                     ->where(function ($query) {
                     $query->where('team_owner_id', Auth::id());
                 })],
-                'player_name' => [
-                'required', 
-                'string', 
-                'max:50', 
-                new alpha_num_check,
-                Rule::unique('players', 'player_name')->ignore($player->id)
-                    ->where(function ($query) use ($convention) {
-                    $query->where('convention_id', $convention->id);
+            //     'player_name' => [
+            //     'string', 
+            //     'max:50', 
+            //     new alpha_num_check,
+            //     Rule::unique('players', 'player_name')->ignore($player->id)
+            //         ->where(function ($query) use ($convention) {
+            //         $query->where('convention_id', $convention->id);
                
-            })],
+            // })],
 
             ]);
 
             $player = Player::findOrFail($id);
-            $player->convention_id = $request->convention_id;
-            $player->team_owner_id = $request->team_owner_id;
+            // $player->convention_id = $request->convention_id;
+            // $player->team_owner_id = $request->team_owner_id;
             $player->position_id = $request->position_id;
             $player->player_no = $request->player_no;
-            $player->player_name = $request->player_name;
+            // $player->player_name = $request->player_name;
             $player->save();
 
             return redirect()

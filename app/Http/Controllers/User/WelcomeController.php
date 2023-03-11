@@ -14,6 +14,8 @@ use App\Models\GameResult;
 use App\Models\ConventionsResult; //追加
 use App\Models\League;
 use App\Models\Infomation;
+// use App\Models\Past;
+use Artisan; //追加
 
 class WelcomeController extends Controller
 {
@@ -83,5 +85,4 @@ class WelcomeController extends Controller
 
          return view('user.infolist_show', compact('info'));
     }
-
 }

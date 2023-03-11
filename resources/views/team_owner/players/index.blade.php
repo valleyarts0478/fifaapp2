@@ -7,7 +7,7 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
     <div class="p-6 bg-white border-b border-gray-200">
       <div class="text-center my-2 mr-2">
-        <button onclick="location.href='{{ route('team_owner.players.create') }}'" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded-md text-lg">新規登録</button>    
+        <button onclick="location.href='{{ route('team_owner.players.create') }}'" class="text-white bg-ral-400 border-0 py-2 px-8 focus:outline-none rounded-md text-lg">新規登録</button>    
       </div>
         <x-flash-message status="session('status')" />
       <div class="flex flex-wrap p-2 mx-auto py-4 lg:px-36 md:px-8 -m-2">メンバー:{{ $count }}人</div>
@@ -29,9 +29,9 @@
                           NO</span>
                       <div class="text-gray-500 title-font font-medium mt-1 ml-2">{{ $player->player_no }}</div></span>
                 </div>
-                {{-- <div class="text-center">
-                  <button onclick="location.href='{{ route('team_owner.players.edit', ['player' => $player->id ]) }}'" class="text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded-md text-sm">編集</button>      
-                </div> --}}
+                <div class="text-center">
+                  <button onclick="location.href='{{ route('team_owner.players.edit', ['player' => $player->id ]) }}'" class="text-white bg-ral-400 border-0 py-2 px-4 focus:outline-none hover:bg-ral-300 rounded-md text-sm">編集</button>      
+                </div>
               </div>
             </div>
             @endforeach

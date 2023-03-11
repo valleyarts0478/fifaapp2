@@ -6,7 +6,7 @@
     $path = 'storage/products/';
   }
   if($type === 'teams'){
-    $path = 'storage/teams/';
+    $path = 'storage/teams/logo/';
   }
 @endphp
 <div>

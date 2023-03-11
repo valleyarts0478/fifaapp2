@@ -11,17 +11,18 @@
   @else
  <div id="first" class="area">
 
-    <div class="container px-4 md:px-8 mx-auto">
+    <div class="container px-2 md:px-4 mx-auto">
       
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
+      {{-- <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 xl:gap-8"> --}}
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 xl:gap-4">
         <!-- article - start -->
         @foreach($team_list as $date => $teams)         
         <a href="{{ route('user.day.schedule', ['team' => $date ]) }}" class="group h-48 md:h-64 xl:h-96 flex flex-col bg-gray-100 rounded-lg shadow-lg overflow-hidden relative">
           <img class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" src="{{ asset('storage/teams/' . "ral_card1.jpg") }}" alt="team_logo">
           <div class="bg-gradient-to-r from-ral-400 md:via-transparent to-transparent absolute inset-0 pointer-events-none"></div>
   
-          <div class="relative p-4 mt-auto">
-            <div class="mb-4 text-white text-5xl opacity-70">
+          <div class="relative p-4 mt-2 lg:mt-auto">
+            <div class="mb-16 md:mb-24 text-white text-5xl opacity-70">
               @foreach($section as $key => $value)
               @if($key == $date)
                 @switch($value['section'])
@@ -42,8 +43,8 @@
               @endforeach 
           </div>            
             {{-- <h2 class="text-gray-200 transition duration-100 mb-2">Schedule</h2> --}}
-            <div class="text-white font-semibold text-2xl">{{ $date }}</div>  
-            <div class="text-ral-300 font-semibold">Show more</div>
+            <div class="text-white text-md md:text-xl">{{ $date }}</div>  
+            <div class="text-ral-300 text-xs md:text-xl">Show more</div>
           </div>
         </a>     
         @endforeach
@@ -59,8 +60,8 @@
   2部日程表はありません。<br>
   @else
   <div id="second" class="area">
-   <div class="container px-4 md:px-8 mx-auto">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
+   <div class="container px-2 md:px-8 mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 xl:gap-4">
       <!-- article - start -->
       @foreach($team_list_second as $date => $teams)      
        
@@ -68,8 +69,8 @@
         <img class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" src="{{ asset('storage/teams/' . "ral_card1.jpg") }}" alt="team_logo">
         <div class="bg-gradient-to-r from-ral-400 md:via-transparent to-transparent absolute inset-0 pointer-events-none"></div>
   
-        <div class="relative p-4 mt-auto">
-          <div class="mb-4 text-white text-5xl opacity-70">
+        <div class="relative p-4 mt-2 lg:mt-auto">
+          <div class="mb-16 md:mb-24 text-white text-5xl opacity-70">
             @foreach($section2 as $key => $value)
             @if($key == $date)
               @switch($value['section'])
@@ -91,8 +92,8 @@
         </div>  
 
           {{-- <h2 class="text-gray-200 transition duration-100 mb-2">Schedule</h2> --}}
-          <div class="text-white font-semibold text-2xl">{{ $date }}</div>  
-          <div class="text-ral-300 font-semibold">Show more</div>
+          <div class="text-white text-md md:text-xl">{{ $date }}</div>  
+            <div class="text-ral-300 text-xs md:text-xl">Show more</div>
         </div>
       </a>
        

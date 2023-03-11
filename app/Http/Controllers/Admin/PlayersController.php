@@ -6,9 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB; //QueryBuilder クエリビルダー
+use App\Models\Convention;
 use App\Models\Team_owner;
 use App\Models\Player;
+use App\Models\Position;
 use App\Http\Requests\PlayerRequest;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+use App\Rules\Player_name_check;
+use App\Rules\Admin_Player_no_check;
+use App\Rules\alpha_num_check;
 
 class PlayersController extends Controller
 {
@@ -18,10 +25,10 @@ class PlayersController extends Controller
 
         // $this->middleware(function ($request, $next) {
 
-        //     $id = $request->route()->parameter('players'); //shopのid取得
+        //     $id = $request->route()->parameter('player'); //shopのid取得
 
         //     if (!is_null($id)) {
-        //         $playerOwnerId = Player::findOrFail($id)->team->team_owner->id;
+        //         $playerOwnerId = Player::findOrFail($id)->team_owner->id;
         //         $playerId = (int)$playerOwnerId; // キャスト 文字列→数値に型変換
         //         if ($playerId !== Auth::id()) {
         //             abort(404);
@@ -33,12 +40,13 @@ class PlayersController extends Controller
 
     public function index()
     {
-        $players = Player::select('team_owner_id', 'player_no', 'player_name')
-            ->orderBy('team_owner_id', 'asc')
-            ->orderBy('created_at', 'desc')
+        // $convention = Convention::select('id', 'convention_no')->get();
+        // dd($convention->id);
+        $team_owners = Team_owner::orderBy('id', 'desc')
             ->get();
 
-        return view('admin.players.index', compact('players'));
+
+        return view('admin.players.index', compact('team_owners'));
     }
 
     /**
@@ -88,7 +96,17 @@ class PlayersController extends Controller
      */
     public function show($id)
     {
-        //
+        $team = Team_owner::findOrFail($id);
+        // dd($team->id);
+        $positions = Position::select('id', 'position_name')->get();
+        // dd($team->id);
+        $players = Player::where('team_owner_id', $team->id)
+            ->orderBy('id', 'asc')
+            ->get();
+
+        $count = Player::where('team_owner_id', $team->id)->count();
+
+        return view('admin.players.show', compact('team', 'players', 'positions', 'count'));
     }
 
     /**
@@ -99,7 +117,13 @@ class PlayersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $positions = Position::select('id', 'position_name')->get();
+        $players = Player::where('id', $id)
+            ->orderBy('id', 'asc')
+            ->get();
+        // dd($players->team_owner->team_name);
+
+        return view('admin.players.edit', compact('players', 'positions'));
     }
 
     /**
@@ -111,7 +135,41 @@ class PlayersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $player = Player::findOrFail($id);
+        $team = Team_owner::where('id', $player->team_owner->id)->get();
+        // dd($team);
+        $request->validate([
+            // 'team_owner_id' => 'integer|max:255', //255までの数字を許可
+            'position_id' => 'integer|max:5', //5までの入力を許可
+            'player_no' => [
+                'required',
+                'integer',
+                'min:1',
+                'max:99',
+                Rule::unique('players', 'player_no')->ignore($player->team_owner->id),
+            ],
+
+            // 'player_name' => [
+            //     'required',
+            //     'string',
+            //     'max:50',
+            //     new alpha_num_check,
+            //     Rule::unique('players', 'player_name')->ignore($player->id)
+            // ],
+        ]);
+        // $player = Player::findOrFail($id);
+        $player->player_name = $request->player_name;
+        $player->position_id = $request->position_id;
+        $player->player_no = $request->player_no;
+        $player->save();
+
+        return redirect()
+            ->route('admin.players.index')
+            ->with([
+                'message' => '選手更新をしました。',
+                'status' => 'info'
+            ]);
     }
 
     /**
