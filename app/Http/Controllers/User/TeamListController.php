@@ -43,15 +43,15 @@ class TeamListController extends Controller
 
     public function show($id)
     {
-        // $team = Team_owner::findOrFail($id);
-        // // dd($team->id);
-        // $players = Player::where('team_owner_id', $team->id)
-        //     ->orderBy('position_id', 'asc')
-        //     ->get();
+        $team = Team_owner::findOrFail($id);
+        // dd($team->id);
+        $players = Player::where('team_owner_id', $team->id)
+            ->orderBy('position_id', 'asc')
+            ->get();
 
-        // $count = Player::where('team_owner_id', $team->id)->count();
+        $count = Player::where('team_owner_id', $team->id)->count();
 
-        // return view('user.team_detail', compact('team', 'players', 'count'));
+        return view('user.team_detail', compact('team', 'players', 'count'));
     }
 
     public function schedule($id)
