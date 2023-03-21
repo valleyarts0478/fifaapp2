@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            // AdminSeeder::class,
+            AdminSeeder::class,
             // Ownerseeder::class,
             // Shopseeder::class,
             // ImageSeeder::class,
@@ -37,10 +37,10 @@ class DatabaseSeeder extends Seeder
             // ProductSeeder::class,
             // StockSeeder::class,
             // UserSeeder::class,
-            // ConventionSeeder::class,
-            // LeagueSeeder::class,
+            ConventionSeeder::class,
+            LeagueSeeder::class,
             // TeamOwnerSeeder::class,
-            TeamOwnerAddSeeder::class,
+            // TeamOwnerAddSeeder::class,
             // PositionsSeeder::class,
             // PlayerSeeder::class,
             // TeamMemberSeeder::class,

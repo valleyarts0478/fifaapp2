@@ -65,14 +65,11 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        $teamId = Auth::id();
-        $team_owners = Team_owner::where('id', $teamId)->get();
-
-        $positions = Position::select('id', 'position_name')
-            ->orderBy('id', 'asc')->get();
+        // $teamId = Auth::id();
+        $team_owners = Team_owner::where('id', Auth::id())->get();
+        $positions = Position::orderBy('id', 'asc')->get();
 
         $players = Player::where('team_owner_id', Auth::id())
-            // ->select('id', 'team_owner_id', 'position_id', 'player_no', 'player_name')
             ->orderBy('created_at', 'desc')
             ->get();
         // dd($players);
@@ -183,23 +180,24 @@ class PlayerController extends Controller
                 'team_owner_id' => 'integer|max:255', //255までの数字を許可
                 'position_id' => 'integer|max:5', //5までの入力を許可
                 'player_no' => [
-                    'required', 
-                    'integer', 
-                    'min:1', 
-                    'max:99', 
+                    'required',
+                    'integer',
+                    'min:1',
+                    'max:99',
                     Rule::unique('players')->ignore($player->id)
-                    ->where(function ($query) {
-                    $query->where('team_owner_id', Auth::id());
-                })],
-            //     'player_name' => [
-            //     'string', 
-            //     'max:50', 
-            //     new alpha_num_check,
-            //     Rule::unique('players', 'player_name')->ignore($player->id)
-            //         ->where(function ($query) use ($convention) {
-            //         $query->where('convention_id', $convention->id);
-               
-            // })],
+                        ->where(function ($query) {
+                            $query->where('team_owner_id', Auth::id());
+                        })
+                ],
+                //     'player_name' => [
+                //     'string', 
+                //     'max:50', 
+                //     new alpha_num_check,
+                //     Rule::unique('players', 'player_name')->ignore($player->id)
+                //         ->where(function ($query) use ($convention) {
+                //         $query->where('convention_id', $convention->id);
+
+                // })],
 
             ]);
 

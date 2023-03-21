@@ -52,15 +52,15 @@ class GameResultsController extends Controller
     {
         // $results = GameResult::all();
         $team_owner = Team_owner::find(Auth::id());
-
+        $current_convention = $team_owner->convention_id;
         //降順の最初のレコードを取得
         $convention = Convention::orderBy('id', 'desc')->first();
 
         $games = Game::where(function ($query) use ($team_owner) {
             $query->where('home_team', $team_owner->team_name)
                 ->orWhere('away_team', $team_owner->team_name);
-        })->where(function ($query) use ($convention) {
-            $query->where('convention_id', $convention->id);
+        })->where(function ($query) use ($current_convention) {
+            $query->where('convention_id', $current_convention);
         })->orderBy('game_date', 'asc')->get();
 
         //チームロゴ取得用
@@ -78,7 +78,7 @@ class GameResultsController extends Controller
         }
 
         $team_names = Team_owner::where('convention_id', $convention->id)
-        ->whereIn('team_name', $team_info['team_name'])->get();
+            ->whereIn('team_name', $team_info['team_name'])->get();
 
         return view('team_owner.results.index', compact('team_owner', 'games', 'team_names'));
     }

@@ -14,8 +14,10 @@ class Past extends Model
     protected $table = 'pasts';
 
     protected $fillable = [
-        'id',
         'team_name',
+        'home_score',
+        'away_score',
+        'pk_score',
         'convention_id',
         'league_id',
         'game_point',
