@@ -91,7 +91,7 @@
                     <div class="w-full h-12 leading-8 py-2 text-xl text-center border-b border-gray-400">menu</div>
                     <div class="font-bold flex flex-wrap -m-4">
 
-                        {{-- @if ($today > $last_date)
+                        @if ($today > $last_date)
                             <div class="p-4 md:w-1/3">
                                 <div class="min-h-96 flex justify-center items-center py-4 md:py-4">
                                     <a href="/current_competitions">
@@ -102,7 +102,7 @@
                                             href="/current_competitions">リーグ戦結果</a></p>
                                 </div>
                             </div>
-                        @endif --}}
+                        @endif
                         <div class="p-4 md:w-1/3">
                             <div class="min-h-96 flex justify-center items-center py-4 md:py-4">
                                 <a href="/team_list">
