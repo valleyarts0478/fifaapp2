@@ -200,23 +200,23 @@ class ConventionsResultsController extends Controller
 
         //得点王・アシスト王
         //Agroupの得点王を取得
-        $player_rank_goal1 = PastPlayerRankTotal::where('convention_id', $conventionId->id)
+        $player_rank_goal1 = PlayerRankTotal::where('convention_id', $conventionId->id)
             ->where('league_id', '1')
             ->orderBy('goals', 'desc')
             ->first();
         // dd($player_rank_goal1);
         //Bgroupの得点王を取得
-        $player_rank_goal2 = PastPlayerRankTotal::where('convention_id', $conventionId->id)
+        $player_rank_goal2 = PlayerRankTotal::where('convention_id', $conventionId->id)
             ->where('league_id', '2')
             ->orderBy('goals', 'desc')
             ->first();
         //Agroupのアシスト王を取得
-        $player_rank_assist1 = PastPlayerRankTotal::where('convention_id', $conventionId->id)
+        $player_rank_assist1 = PlayerRankTotal::where('convention_id', $conventionId->id)
             ->where('league_id', '1')
             ->orderBy('assists', 'desc')
             ->first();
         //Bgroupのアシスト王を取得
-        $player_rank_assist2 = PastPlayerRankTotal::where('convention_id', $conventionId->id)
+        $player_rank_assist2 = PlayerRankTotal::where('convention_id', $conventionId->id)
             ->where('league_id', '2')
             ->orderBy('assists', 'desc')
             ->first();
