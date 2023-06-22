@@ -18,7 +18,8 @@ use Illuminate\Validation\Rules;
 use Throwable;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\TeamLogoUploadRequest;
-
+use App\Models\Player;
+use App\Models\Past;
 
 class TeamOwnersController extends Controller
 {
@@ -29,17 +30,11 @@ class TeamOwnersController extends Controller
 
     public function index()
     {
-        // $team_owners = Team_owner::select('id', 'convention_id', 'league_id', 'team_name', 'team_abb', 'team_logo_url', 'created_at')
-        //     ->paginate(10);
         $convention = Convention::orderBy('id', 'desc')->first();
-        $team_owners = Team_owner::orderBy('id', 'desc')
-            ->where('convention_id', $convention->id)
-            ->paginate(10);
+        $team_owners = Team_owner::where('convention_id', $convention->id)
+            ->orderBy('league_id', 'asc')
+            ->paginate(24);
 
-
-        // $conventions = Convention::select('convention_no');
-        // $leagues = League::select('id', 'league_name');
-        // dd($team_owners, $leagues);
         return view('admin.team_owners.index', compact('team_owners'));
     }
 

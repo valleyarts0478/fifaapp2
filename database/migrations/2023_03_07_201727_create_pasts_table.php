@@ -15,7 +15,7 @@ class CreatePastsTable extends Migration
     {
         Schema::create('pasts', function (Blueprint $table) {
             $table->id();
-            $table->string('team_name')->unique()->nullable();
+            $table->string('team_name')->nullable();
             $table->smallinteger('home_score')->nullable();
             $table->smallinteger('away_score')->nullable();
             $table->smallinteger('pk_score')->nullable();

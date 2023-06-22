@@ -46,6 +46,8 @@ Route::resource('conventions', ConventionsController::class)
 Route::middleware('auth:admin')->group(function () {
     Route::get('/pastmove', [PastsController::class, 'pastmove'])->name('pastmove');
     Route::get('/pastplayermove', [PastsController::class, 'past_player_move'])->name('pastplayermove');
+    Route::get('/teammove', [PastsController::class, 'teammove'])->name('teammove');
+    Route::get('/playermove', [PastsController::class, 'playermove'])->name('playermove');
 });
 
 

@@ -31,12 +31,18 @@ class WelcomeController extends Controller
         //大会最終日程の日付を取得
         $game_date = Game::where('convention_id', $game_convention_id->convention_id)
             ->orderBy('game_date', 'desc')->first();
-        //10時間後
+
+            
+        if($convention->id === $game_convention_id->convention_id){
+            //10時間後
         $last_date = $game_date->game_date->addHour(12);
+            
+        }else{
+            $last_date = "offseason";
+        } 
+       
         //現在の日付・時間を取得
         $today = Carbon::createFromDate();
-
-        // dd($game_date);
         //チーム名を取得
         $team_owners = Team_owner::where('convention_id', $convention->id)->get();
 
@@ -44,7 +50,6 @@ class WelcomeController extends Controller
         // $conventionsResults = ConventionsResult::where('convention_id', $convention->id)->get();
 
         $true_false = ConventionsResult::where('convention_id', $convention->id)->exists();
-
 
         //$conventionsResultsのレコードがあるなら
         if ($true_false === true) {

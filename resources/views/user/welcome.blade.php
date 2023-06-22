@@ -28,7 +28,7 @@
                 </div>
                 <!-- text end -->
             </section>
-            <div class="w-full h-12 leading-8 py-2 text-xl text-center bg-ral-300">RAL-E 9th開催中!</div>
+            <div class="w-full h-12 leading-8 py-2 text-xl text-center bg-ral-300">RAL-E 10th7/9開幕!</div>
             <!--slider start-->
             <div id="swiper-teamlist" class="swiper-card l-section">
                 <div class="l-inner">
@@ -102,7 +102,9 @@
                                             href="/current_competitions">リーグ戦結果</a></p>
                                 </div>
                             </div>
-                        @endif
+                            @elseif ($last_date === "offseason")
+                        @endif                    
+
                         <div class="p-4 md:w-1/3">
                             <div class="min-h-96 flex justify-center items-center py-4 md:py-4">
                                 <a href="/team_list">
