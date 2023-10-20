@@ -28,7 +28,7 @@
                 </div>
                 <!-- text end -->
             </section>
-            <div class="w-full h-12 leading-8 py-2 text-xl text-center bg-ral-300">RAL-E 10th7/9開幕!</div>
+            <div class="w-full h-12 leading-8 py-2 text-xl text-center bg-ral-300">FC24・PS5版プロクラブで開催</div>
             <!--slider start-->
             <div id="swiper-teamlist" class="swiper-card l-section">
                 <div class="l-inner">
