@@ -36,13 +36,13 @@
                   <button onclick="location.href='{{ route('team_owner.players.destroy', ['player' => $player->id ]) }}'" class="text-white bg-ral-200 border-0 py-2 px-4 focus:outline-none rounded-md text-sm">削除</button>      
                 </div> --}}
 
-                {{-- <form id="delete_{{$player->id}}" method="post" action="{{ route('team_owner.players.destroy', ['player' => $player->id]) }}">                 
+                <form id="delete_{{$player->id}}" method="post" action="{{ route('team_owner.players.destroy', ['player' => $player->id]) }}">                 
                   @csrf
                   @method('delete')
                   <td class="md:px-4 py-3">
                     <a href="#" data-id="{{ $player->id }}" onclick="deletePost(this)" class="text-white bg-ral-200 border-0 py-2 px-4 mr-1 focus:outline-none rounded-md text-sm">削除</a>
                   </td>
-                </form> --}}
+                </form>
 
 
               </div>
