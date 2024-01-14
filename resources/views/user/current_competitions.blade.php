@@ -37,7 +37,8 @@
                     </div>
                 </div>
                 <div class="mb-4 text-center">
-                    @if ($convention_results1->pk_score == null or $convention_results2->pk_score == null)
+                    {{-- @if ($convention_results1->pk_score == null or $convention_results2->pk_score == null) --}}
+                    @if ($pk_score1 == null or $pk_score2 == null)
                     @else
                         <div class="text-xs">PK or GG</div>
                         {{-- <div>({{ $convention_results1->pk_score }}-{{ $convention_results2->pk_score }})</div> --}}
