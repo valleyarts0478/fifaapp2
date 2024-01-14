@@ -158,6 +158,8 @@ class ConventionsResultsController extends Controller
             'player_rank_assist2',
             'sougou_score1',
             'sougou_score2',
+            'pk_score1',
+            'pk_score2',
 
         ));
     }
