@@ -142,6 +142,8 @@ class ConventionsResultsController extends Controller
         //総合優勝決定戦のスコア
         $sougou_score1 = ($convention_results1->home_score) + ($convention_results1->away_score);
         $sougou_score2 = ($convention_results2->home_score) + ($convention_results2->away_score);
+        $pk_score1 = $convention_results1->pk_score;
+        $pk_score2 = $convention_results2->pk_score;
 
         // dd($sougou_score2);
         return view('user.current_competitions', compact(

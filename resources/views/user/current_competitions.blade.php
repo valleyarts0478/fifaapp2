@@ -39,8 +39,9 @@
                 <div class="mb-4 text-center">
                     @if ($convention_results1->pk_score == null or $convention_results2->pk_score == null)
                     @else
-                        <div class="text-xs">PK</div>
-                        <div>({{ $convention_results1->pk_score }}-{{ $convention_results2->pk_score }})</div>
+                        <div class="text-xs">PK or GG</div>
+                        {{-- <div>({{ $convention_results1->pk_score }}-{{ $convention_results2->pk_score }})</div> --}}
+                        <div>3試合目:({{ $pk_score1 }}-{{ $pk_score2 }})</div>
                     @endif
                 </div>
             @endif
