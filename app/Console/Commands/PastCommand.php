@@ -44,9 +44,11 @@ class PastCommand extends Command
     {
         //降順の最初のレコードを取得
         $convention = Convention::orderBy('id', 'desc')->first();
+        $old_convention = $convention->id - 1;//1個前の大会の分
+        // dd($old_convention);
         // $convention1 = Convention::where('id', $convention->id)->first();
         // dd($convention1);
-        $results = ConventionsResult::where('convention_id', $convention->id)->get();
+        $results = ConventionsResult::where('convention_id', $old_convention)->get();
 
         $past = [];
         foreach($results as $result){

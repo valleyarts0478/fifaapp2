@@ -45,9 +45,9 @@ class PastPlayerRankCommand extends Command
     {
         //降順の最初のレコードを取得
         $convention = Convention::orderBy('id', 'desc')->first();
-        // $convention1 = Convention::where('id', $convention->id)->first();
-        // dd($convention1);
-        $player_results = PlayerRankTotal::where('convention_id', $convention->id)->get();
+        $old_convention = $convention->id - 1;//1個前の大会の分
+        // dd($old_convention);
+        $player_results = PlayerRankTotal::where('convention_id', $old_convention)->get();
 
         $past_player = [];
         foreach($player_results as $result){

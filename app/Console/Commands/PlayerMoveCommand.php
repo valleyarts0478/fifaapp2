@@ -43,11 +43,12 @@ class PlayerMoveCommand extends Command
      */
     public function handle()
     {
+        //最新の大会IDを取得
         $convention = Convention::orderBy('id', 'desc')->first();
         //
-        $conventionId = Past::orderBy('id', 'desc')->first();
-        //267
-        $players = Player::where('convention_id', $conventionId->convention_id)
+        // $conventionId = Past::orderBy('id', 'desc')->first();
+        $old_convention = $convention->id - 1;//1個前の大会の分
+        $players = Player::where('convention_id', $old_convention)
             ->orderBy('id', 'desc')->get();
 
         //最新の大会に参加しているチーム情報がとれる

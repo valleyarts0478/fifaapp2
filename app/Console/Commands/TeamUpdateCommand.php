@@ -24,7 +24,7 @@ class TeamUpdateCommand extends Command
      *
      * @var string
      */
-    protected $description = 'チームとプレイヤーを次の大会にコピーする';
+    protected $description = 'チームを次の大会にコピーする';
 
     /**
      * Create a new command instance.
@@ -44,22 +44,24 @@ class TeamUpdateCommand extends Command
     public function handle()
     {
         //1つ前の大会・降順の最初のレコードを取得
-        $convention = Past::orderBy('id', 'desc')->first();
+        // $convention = Past::orderBy('id', 'desc')->first();
         //最新の大会・降順の最初のレコードを取得
-        $new_convention = Convention::orderBy('id', 'desc')->first();
-
-        $team_owner = Team_owner::where('convention_id', $convention->convention_id)->get();
+        $convention = Convention::orderBy('id', 'desc')->first();
+        $old_convention = $convention->id - 1;//1個前の大会の分
+        $team_owner = Team_owner::where('convention_id', $old_convention)->get();
 
         $team_owners = [];
         foreach($team_owner as $result){
+            
             $team_owners[] = [
                 'id' => null,
                 'name' => $result['name'],
-                'email' => $result['email'] . $new_convention->id,
+                'email' => substr($result['email'], 0, -2). $convention->id,
+                // 'email' => $result['email'] . $new_convention->id,
                 'email_verified_at' => $result['email_verified_at'],
                 'password' => $result['password'],
                 'remember_token' => $result['remember_token'],
-                'convention_id' => $new_convention->id,
+                'convention_id' => $convention->id,
                 'league_id' => $result['league_id'],
                 'team_name' => $result['team_name'],
                 'team_abb' => $result['team_abb'],
