@@ -17,99 +17,86 @@ class TeamOwnerAddSeeder extends Seeder
     {
         DB::table('team_owners')->insert([
 
-            [
-                'id' => '108',
-                'name' => 'Toflock CF',
-                'email' => 'tcf@rale.net11',
-                'password' => Hash::make('tcf302'),
-                'convention_id' => '11',
-                'league_id' => '1',
-                'team_name' => 'Toflock CF',
-                'team_abb' => 'TCF',
-                'twitter_add' => '@ToflockCF',
-                'team_logo_url' => 'TCF.png',
-                'created_at' => '2023-10-20 0:00:00'
-               ],
-               [
-                'id' => '109',
-                'name' => 'Kawatou Factory',
-                'email' => 'kwt@rale.net11',
-                'password' => Hash::make('kwt3211'),
-                'convention_id' => '11',
-                'league_id' => '2',
-                'team_name' => 'Kawatou Factory',
-                'team_abb' => 'KWT',
-                'twitter_add' => '@KawatouFactory',
-                'team_logo_url' => 'KWT.png',
-                'created_at' => '2023-10-20 0:00:00'
-               ],
-               [
-                'id' => '110',
-                'name' => 'chupachups1958',
-                'email' => 'chu@rale.net11',
-                'password' => Hash::make('chu83'),
-                'convention_id' => '11',
-                'league_id' => '1',
-                'team_name' => 'chupachups1958',
-                'team_abb' => 'CHU',
-                'twitter_add' => '@FCchupachups',
-                'team_logo_url' => 'CHU.jpg',
-                'created_at' => '2023-10-20 0:00:00'
-               ],
-               [
-                'id' => '111',
-                'name' => 'FREESIA',
-                'email' => 'fra@rale.net11',
-                'password' => Hash::make('fra816'),
-                'convention_id' => '11',
-                'league_id' => '2',
-                'team_name' => 'FREESIA',
-                'team_abb' => 'FRA',
-                'twitter_add' => '@FREESIAFC',
-                'team_logo_url' => 'FRA.jpg',
-                'created_at' => '2023-10-20 0:00:00'
-               ],
-               [
-                'id' => '112',
-                'name' => 'West Gorton',
-                'email' => 'wgn@rale.net11',
-                'password' => Hash::make('wgn732'),
-                'convention_id' => '11',
-                'league_id' => '2',
-                'team_name' => 'West Gorton',
-                'team_abb' => 'WGN',
-                'twitter_add' => '@West_Gorton_FC',
-                'team_logo_url' => 'WGN.jpg',
-                'created_at' => '2023-10-20 0:00:00'
-               ],
-               [
-                'id' => '113',
-                'name' => 'CelesteyBlanco',
-                'email' => 'cyb@rale.net11',
-                'password' => Hash::make('cyb523'),
-                'convention_id' => '11',
-                'league_id' => '1',
-                'team_name' => 'CelesteyBlanco',
-                'team_abb' => 'CyB',
-                'twitter_add' => '@CyB_fc24',
-                'team_logo_url' => 'CyB.jpg',
-                'created_at' => '2023-10-20 0:00:00'
-               ],
-               [
-                'id' => '114',
-                'name' => 'El Maverick',
-                'email' => 'ema@rale.net11',
-                'password' => Hash::make('ema315'),
-                'convention_id' => '11',
-                'league_id' => '2',
-                'team_name' => 'El Maverick',
-                'team_abb' => 'EMA',
-                'twitter_add' => '@El_Maverick_CF',
-                'team_logo_url' => 'EMA.jpg',
-                'created_at' => '2023-10-20 0:00:00'
-               ]
-              
-
+            
+    [
+        'id'=> '216',
+        'name'=> 'Gresly eFC',
+        'email'=> 'grs@rale.net12',
+        'password'=> Hash::make('grs187'),
+        'convention_id'=> '12',
+        'league_id'=> '1',
+        'team_name'=> 'Gresly eFC',
+        'team_abb'=> 'GRS',
+        'twitter_add'=> '@Gresly_eFC',
+        'team_logo_url'=> 'GRS.jpg',
+        'created_at'=> '2024-02-12 00:00:00'
+    ],
+    [
+        'id'=> '217',
+        'name'=> 'Bacchus FC',
+        'email'=> 'bac@rale.net12',
+        'password'=> Hash::make('bac321'),
+        'convention_id'=> '12',
+        'league_id'=> '1',
+        'team_name'=> 'Bacchus FC',
+        'team_abb'=> 'BAC',
+        'twitter_add'=> '@Bacchus_FIFA',
+        'team_logo_url'=> 'BAC.jpg',
+        'created_at'=> '2024-02-12 00:00:00'
+    ],
+    [
+        'id'=> '218',
+        'name'=> 'FC Glanz',
+        'email'=> 'fcg@rale.net12',
+        'password'=> Hash::make('fcg736'),
+        'convention_id'=> '12',
+        'league_id'=> '1',
+        'team_name'=> 'FC Glanz',
+        'team_abb'=> 'FCG',
+        'twitter_add'=> '@FCGlanz_',
+        'team_logo_url'=> 'FCG.png',
+        'created_at'=> '2024-02-12 00:00:00'
+    ],
+    [
+        'id'=> '219',
+        'name'=> 'ENJOY TOP TEAM',
+        'email'=> 'ett@rale.net12',
+        'password'=> Hash::make('ett205'),
+        'convention_id'=> '12',
+        'league_id'=> '2',
+        'team_name'=> 'ENJOY TOP TEAM',
+        'team_abb'=> 'ETT',
+        'twitter_add'=> '@ENJOYTOPTEAM',
+        'team_logo_url'=> 'ETT.jpg',
+        'created_at'=> '2024-02-12 00:00:00'
+    ],
+    [
+        'id'=> '220',
+        'name'=> 'Consonance',
+        'email'=> 'con@rale.net12',
+        'password'=> Hash::make('con153'),
+        'convention_id'=> '12',
+        'league_id'=> '2',
+        'team_name'=> 'Consonance',
+        'team_abb'=> 'CON',
+        'twitter_add'=> '@consona55641840',
+        'team_logo_url'=> 'CON.jpg',
+        'created_at'=> '2024-02-12 00:00:00'
+    ],
+    [
+        'id'=> '221',
+        'name'=> 'KFCTT REVOLT',
+        'email'=> 'kfc@rale.net12',
+        'password'=> Hash::make('kfc611'),
+        'convention_id'=> '12',
+        'league_id'=> '2',
+        'team_name'=> 'KFCTT REVOLT',
+        'team_abb'=> 'KFC',
+        'twitter_add'=> '@KFCTT_REVOLT',
+        'team_logo_url'=> 'KFC.jpg',
+        'created_at'=> '2024-02-12 00:00:00'
+    ]
+           
         ]);
     }
 }
