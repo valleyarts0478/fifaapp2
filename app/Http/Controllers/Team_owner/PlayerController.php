@@ -89,8 +89,7 @@ class PlayerController extends Controller
         $date2 = new DateTime('Sunday 00:00:00'); //登録できる日時
         $date3 = new DateTime('Monday 05:59:59'); //登録不可能な日時
         // dd($date2);
-
-        // $date2 =
+        
         if ($date1->format('Y-m-d H:i:s') >= $date2->format('Y-m-d H:i:s') && $date1->format('Y-m-d H:i:s') <= $date3->format('Y-m-d H:i:s')) {
             // abort(404); // Not Foundページを表示
             return view('team_owner.players.error');
