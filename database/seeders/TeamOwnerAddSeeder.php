@@ -17,86 +17,71 @@ class TeamOwnerAddSeeder extends Seeder
     {
         DB::table('team_owners')->insert([
 
-            
     [
-        'id'=> '216',
-        'name'=> 'Gresly eFC',
-        'email'=> 'grs@rale.net12',
-        'password'=> Hash::make('grs187'),
-        'convention_id'=> '12',
+        'id'=> '244',
+        'name'=> 'ONE STYLE',
+        'email'=> 'one@rale.net13',
+        'password'=> Hash::make("one514"),
+        'convention_id'=> '13',
         'league_id'=> '1',
-        'team_name'=> 'Gresly eFC',
-        'team_abb'=> 'GRS',
-        'twitter_add'=> '@Gresly_eFC',
-        'team_logo_url'=> 'GRS.jpg',
-        'created_at'=> '2024-02-12 00:00:00'
+        'team_name'=> 'ONE STYLE',
+        'team_abb'=> 'ONE',
+        'twitter_add'=> '@ONE___STYLE',
+        'team_logo_url'=> 'ONE.jpg',
+        'created_at'=> '2024-07-18 00:00:00'
     ],
     [
-        'id'=> '217',
-        'name'=> 'Bacchus FC',
-        'email'=> 'bac@rale.net12',
-        'password'=> Hash::make('bac321'),
-        'convention_id'=> '12',
+        'id'=> '245',
+        'name'=> 'SHIMANAMI',
+        'email'=> 'shi@rale.net13',
+        'password'=> Hash::make("shi98"),
+        'convention_id'=> '13',
         'league_id'=> '1',
-        'team_name'=> 'Bacchus FC',
-        'team_abb'=> 'BAC',
-        'twitter_add'=> '@Bacchus_FIFA',
-        'team_logo_url'=> 'BAC.jpg',
-        'created_at'=> '2024-02-12 00:00:00'
+        'team_name'=> 'SHIMANAMI',
+        'team_abb'=> 'SHI',
+        'twitter_add'=> '@shimanamifc',
+        'team_logo_url'=> 'SHI.jpg',
+        'created_at'=> '2024-07-18 00:00:00'
     ],
     [
-        'id'=> '218',
-        'name'=> 'FC Glanz',
-        'email'=> 'fcg@rale.net12',
-        'password'=> Hash::make('fcg736'),
-        'convention_id'=> '12',
+        'id'=> '246',
+        'name'=> 'Frog Chorus',
+        'email'=> 'fc@rale.net13',
+        'password'=> Hash::make("fc36"),
+        'convention_id'=> '13',
         'league_id'=> '1',
-        'team_name'=> 'FC Glanz',
-        'team_abb'=> 'FCG',
-        'twitter_add'=> '@FCGlanz_',
-        'team_logo_url'=> 'FCG.png',
-        'created_at'=> '2024-02-12 00:00:00'
+        'team_name'=> 'Frog Chorus',
+        'team_abb'=> 'FC',
+        'twitter_add'=> '@ChorusFrog2024',
+        'team_logo_url'=> 'FC.png',
+        'created_at'=> '2024-07-18 00:00:00'
     ],
     [
-        'id'=> '219',
-        'name'=> 'ENJOY TOP TEAM',
-        'email'=> 'ett@rale.net12',
-        'password'=> Hash::make('ett205'),
-        'convention_id'=> '12',
+        'id'=> '247',
+        'name'=> 'Kamome Madrid',
+        'email'=> 'kam@rale.net13',
+        'password'=> Hash::make("kam131"),
+        'convention_id'=> '13',
         'league_id'=> '2',
-        'team_name'=> 'ENJOY TOP TEAM',
-        'team_abb'=> 'ETT',
-        'twitter_add'=> '@ENJOYTOPTEAM',
-        'team_logo_url'=> 'ETT.jpg',
-        'created_at'=> '2024-02-12 00:00:00'
+        'team_name'=> 'Kamome Madrid',
+        'team_abb'=> 'KAM',
+        'twitter_add'=> '@kamome_eafc',
+        'team_logo_url'=> 'KAM.png',
+        'created_at'=> '2024-07-18 00:00:00'
     ],
     [
-        'id'=> '220',
-        'name'=> 'Consonance',
-        'email'=> 'con@rale.net12',
-        'password'=> Hash::make('con153'),
-        'convention_id'=> '12',
+        'id'=> '248',
+        'name'=> 'CANSTI',
+        'email'=> 'can@rale.net13',
+        'password'=> Hash::make("can141"),
+        'convention_id'=> '13',
         'league_id'=> '2',
-        'team_name'=> 'Consonance',
-        'team_abb'=> 'CON',
-        'twitter_add'=> '@consona55641840',
-        'team_logo_url'=> 'CON.jpg',
-        'created_at'=> '2024-02-12 00:00:00'
+        'team_name'=> 'CANSTI',
+        'team_abb'=> 'CAN',
+        'twitter_add'=> '@cansti1224',
+        'team_logo_url'=> 'CAN.png',
+        'created_at'=> '2024-07-18 00:00:00'
     ],
-    [
-        'id'=> '221',
-        'name'=> 'KFCTT REVOLT',
-        'email'=> 'kfc@rale.net12',
-        'password'=> Hash::make('kfc611'),
-        'convention_id'=> '12',
-        'league_id'=> '2',
-        'team_name'=> 'KFCTT REVOLT',
-        'team_abb'=> 'KFC',
-        'twitter_add'=> '@KFCTT_REVOLT',
-        'team_logo_url'=> 'KFC.jpg',
-        'created_at'=> '2024-02-12 00:00:00'
-    ]
-           
         ]);
     }
 }

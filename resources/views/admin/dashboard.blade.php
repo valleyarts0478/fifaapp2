@@ -12,7 +12,7 @@
                     @if (session('success'))
                         <div class="mb-4">{{ session('success') }}</div>
                     @endif
-
+                    <div>次の大会IDを作成後に下記を順番に実行。</div>
                     <div class="flex justify-start my-2 mr-2">
                         <button onclick="location.href='{{ route('admin.pastmove') }}'"
                             class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded-md text-lg">大会コピー</button>
