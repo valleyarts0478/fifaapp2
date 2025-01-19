@@ -94,6 +94,24 @@ class ConventionsResultsController extends Controller
         // dd($team_names1->team_logo_url);
 
 
+        //AGroup・2番目のチームのみを抽出
+        $convention_results1a = ConventionsResult::where('convention_id', $conventionId->id)
+        ->where('league_id', 1)
+        ->orderBy('game_point', 'desc')
+        ->orderBy('numbers_diff', 'desc')
+        ->offset(1)->limit(1)
+        ->first();
+
+        $team_info1a = [];
+        $team_info1a['team_name'][] = $convention_results1a->team_name;
+        // dd($team_info1['team_name']);
+
+        // 画像情報とるため
+        $team_names1a = [];
+        $team_names1a = Team_owner::where('convention_id', $conventionId->id)
+            ->whereIn('team_name', $team_info1a['team_name'])->first();
+        
+
         //Bgroup
         $convention_results2 = ConventionsResult::where('convention_id', $conventionId->id)
             ->where('league_id', 2)
@@ -115,6 +133,24 @@ class ConventionsResultsController extends Controller
                 ->whereIn('team_name', $team_info2['team_name'])->first();
             // dd($team_names1->team_logo_url);
         }
+
+        //BGroup・2番目のチームのみを抽出
+        $convention_results2a = ConventionsResult::where('convention_id', $conventionId->id)
+        ->where('league_id', 2)
+        ->orderBy('game_point', 'desc')
+        ->orderBy('numbers_diff', 'desc')
+        ->offset(1)->limit(1)
+        ->first();
+
+        $team_info2a = [];
+        $team_info2a['team_name'][] = $convention_results2a->team_name;
+        // dd($team_info1['team_name']);
+
+        // 画像情報とるため
+        $team_names2a = [];
+        $team_names2a = Team_owner::where('convention_id', $conventionId->id)
+            ->whereIn('team_name', $team_info2a['team_name'])->first();
+        
 
         //得点王・アシスト王
         //Agroupの得点王を取得
@@ -145,21 +181,35 @@ class ConventionsResultsController extends Controller
         $pk_score1 = $convention_results1->pk_score;
         $pk_score2 = $convention_results2->pk_score;
 
+        //総合3位決定戦のスコア
+        $sougou_score1a = ($convention_results1a->home_score) + ($convention_results1a->away_score);
+        $sougou_score2a = ($convention_results2a->home_score) + ($convention_results2a->away_score);
+        $pk_score1a = $convention_results1a->pk_score;
+        $pk_score2a = $convention_results2a->pk_score;
+
         // dd($sougou_score2);
         return view('user.current_competitions', compact(
             'conventionId',
             'team_names1',
+            'team_names1a',
             'convention_results1',
+            'convention_results1a',
             'team_names2',
+            'team_names2a',
             'convention_results2',
+            'convention_results2a',
             'player_rank_goal1',
             'player_rank_goal2',
             'player_rank_assist1',
             'player_rank_assist2',
             'sougou_score1',
+            'sougou_score1a',
             'sougou_score2',
+            'sougou_score2a',
             'pk_score1',
+            'pk_score1a',
             'pk_score2',
+            'pk_score2a',
 
         ));
     }
