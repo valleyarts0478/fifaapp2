@@ -130,6 +130,23 @@
 
 <!--3位決定戦タブ-->
             <div id="second" class="area">
+                @if ($sougou_score1a == null or $sougou_score2a == null)
+                @else
+                    <div class="py-2 text-2xl font-bold text-center">総合3位：
+                        @if ($sougou_score1a > $sougou_score2a)
+                            {{ $convention_results1a->team_name }}
+                        @elseif($sougou_score1a < $sougou_score2a)
+                            {{ $convention_results2a->team_name }}
+                        @elseif($sougou_score1a === $sougou_score2a)
+                            @if ($convention_results1a->pk_score > $convention_results2a->pk_score)
+                                {{ $convention_results1a->team_name }}
+                            @else
+                                {{ $convention_results2a->team_name }}
+                            @endif
+                        @endif
+                    </div>
+                @endif
+
             <!--総合3位-->
             @if ($sougou_score1 == null or $sougou_score2 == null)
             @else
