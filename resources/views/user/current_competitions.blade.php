@@ -148,7 +148,7 @@
                 @endif
 
             <!--総合3位-->
-            @if ($sougou_score1 == null or $sougou_score2 == null)
+            {{-- @if ($sougou_score1 == null or $sougou_score2 == null)
             @else
                 <div class="py-2 text-2xl font-bold text-center">総合3位：
                     @if ($sougou_score1a > $sougou_score2a)
@@ -163,7 +163,7 @@
                         @endif
                     @endif
                 </div>
-            @endif
+            @endif --}}
 
             @if ($sougou_score1a == null or $sougou_score2a == null)
             <div class="text-center text-xs">総合3位決定戦</div>
