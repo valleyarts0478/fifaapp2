@@ -50,11 +50,11 @@
                                 </span>
                             </div>
                             <!-- 編集ボタン -->
-                            {{-- <div class="text-center">
+                            <div class="text-center">
                                 <button
                                     onclick="location.href='{{ route('team_owner.players.edit', ['player' => $player->id]) }}'"
                                     class="text-white bg-ral-400 border-0 py-2 px-4 mr-1 focus:outline-none rounded-md text-sm">編集</button>
-                            </div> --}}
+                            </div>
                             <!-- 削除ボタン -->
                             <form id="delete_{{ $player->id }}" method="post"
                                 action="{{ route('team_owner.players.destroy', ['player' => $player->id]) }}">
